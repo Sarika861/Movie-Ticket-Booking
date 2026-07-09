@@ -15,7 +15,7 @@ TESTING = os.environ.get('FLASK_TESTING', 'False').lower() == 'true'
 SECRET_KEY = os.environ.get('SECRET_KEY', 'cinemax_secret_key_2026_production_change_me')
 
 # Server Configuration
-HOST = os.environ.get('HOST', 'localhost')
+HOST = "0.0.0.0"
 PORT = int(os.environ.get('PORT', 5000))
 THREADED = True
 
