@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title animate-fade-in">Experience Cinema Like Never Before</h1>
+        <p class="hero-subtitle animate-fade-in">Premium seating, immersive audio, and the latest blockbusters at {{ theater_name }}.</p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('movies_list') }}" class="btn btn-primary btn-lg btn-glow">
+                <i class="fa-solid fa-play"></i> Now Showing
+            </a>
+            <a href="{{ url_for('booking_start') }}" class="btn btn-secondary btn-lg">
+                <i class="fa-solid fa-ticket"></i> Book Now
+            </a>
+        </div>
+    </div>
+    <div class="hero-overlay"></div>
+</section>
+
+<section class="stats-section">
+    <div class="container">
+        <h2 class="section-title text-center">Theater Overview</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-film"></i>
+                </div>
+                <div class="stat-number">{{ total_movies }}</div>
+                <div class="stat-label">Active Movies</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-ticket-simple"></i>
+                </div>
+                <div class="stat-number">{{ total_bookings }}</div>
+                <div class="stat-label">Confirmed Bookings</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                </div>
+                <div class="stat-number">{{ total_revenue }}</div>
+                <div class="stat-label">Total Revenue</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="container">
+        <h2 class="section-title text-center">Why CineMax?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-couch feature-icon"></i>
+                <h3>Ultra Comfort Seating</h3>
+                <p>Reclining plush leather seats with extra legroom to ensure you enjoy the movie in absolute relaxation.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-volume-high feature-icon"></i>
+                <h3>Dolby Atmos Sound</h3>
+                <p>Immersive 3D audio that moves all around you, putting you right in the center of the action.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-eye feature-icon"></i>
+                <h3>Laser Projection</h3>
+                <p>4K laser projection systems delivering brilliant colors, deep contrast, and unmatched brightness.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

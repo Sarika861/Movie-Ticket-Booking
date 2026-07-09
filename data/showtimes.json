@@ -1,0 +1,52 @@
+{
+  "screens": [
+    {
+      "id": "S1",
+      "number": 1,
+      "name": "Screen 1",
+      "rows": 8,
+      "seats_per_row": 12
+    },
+    {
+      "id": "S2",
+      "number": 2,
+      "name": "Screen 2",
+      "rows": 10,
+      "seats_per_row": 12
+    }
+  ],
+  "showtimes": [
+    {
+      "id": "ST1",
+      "movie_id": "M1",
+      "screen_id": "S1",
+      "date": "2026-07-08",
+      "start_time": "18:00",
+      "price": 12.99
+    },
+    {
+      "id": "ST2",
+      "movie_id": "M1",
+      "screen_id": "S1",
+      "date": "2026-07-08",
+      "start_time": "21:00",
+      "price": 14.99
+    },
+    {
+      "id": "ST3",
+      "movie_id": "M2",
+      "screen_id": "S2",
+      "date": "2026-07-08",
+      "start_time": "19:00",
+      "price": 14.99
+    },
+    {
+      "id": "ST4",
+      "movie_id": "M3",
+      "screen_id": "S2",
+      "date": "2026-07-08",
+      "start_time": "20:00",
+      "price": 10.99
+    }
+  ]
+}

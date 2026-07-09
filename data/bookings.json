@@ -1,0 +1,21 @@
+{
+  "bookings": {
+    "BK1": {
+      "booking_id": "BK1",
+      "customer_email": "sarikachoudhary037@gmail.com",
+      "customer_name": "Sarika choudhary",
+      "movie_title": "The Last Guardian",
+      "showtime_id": "ST1",
+      "seats": [
+        "F4",
+        "F5",
+        "F6"
+      ],
+      "total_price": 38.97,
+      "booking_date": "2026-07-08 23:58:49",
+      "status": "confirmed"
+    }
+  },
+  "customers": {},
+  "last_booking_id": 1
+}

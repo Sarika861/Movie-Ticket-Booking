@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block title %}My Bookings{% endblock %}
+
+{% block content %}
+<div class="container page-content">
+    <div class="page-header">
+        <h1 class="page-title">Manage Your Bookings</h1>
+        <p class="page-subtitle">Search, view, and manage your tickets.</p>
+    </div>
+
+    <!-- Search Form -->
+    <div class="card-container search-container mb-5">
+        <form action="{{ url_for('my_bookings') }}" method="POST" class="search-form">
+            <div class="search-input-group">
+                <i class="fa-solid fa-envelope search-input-icon"></i>
+                <input type="email" name="email" required placeholder="Enter your email to find bookings..." 
+                       value="{{ customer.email if customer else '' }}">
+                <button type="submit" class="btn btn-primary btn-glow">
+                    <i class="fa-solid fa-magnifying-glass"></i> Search
+                </button>
+            </div>
+        </form>
+    </div>
+
+    {% if customer %}
+        <h2 class="section-title mb-4">Bookings for <span class="text-glow">{{ customer.email }}</span></h2>
+        
+        <div class="bookings-list">
+            {% for booking in bookings %}
+            <div class="booking-card" id="booking-card-{{ booking.booking_id }}">
+                <div class="booking-card-header">
+                    <div>
+                        <span class="booking-id">ID: {{ booking.booking_id }}</span>
+                        <span class="booking-date">Booked: {{ booking.booking_date }}</span>
+                    </div>
+                    <span class="booking-status badge {% if booking.status == 'confirmed' %}badge-success{% else %}badge-danger{% endif %}" 
+                          id="status-badge-{{ booking.booking_id }}">
+                        {{ booking.status }}
+                    </span>
+                </div>
+                
+                <div class="booking-card-body">
+                    <h3 class="booking-movie-title">{{ booking.movie_title }}</h3>
+                    <div class="booking-details-grid mini">
+                        <div class="booking-detail">
+                            <span class="bd-label">Seats</span>
+                            <div class="bd-seats-list">
+                                {% for seat in booking.seats %}
+                                <span class="seat-badge mini"><i class="fa-solid fa-chair"></i> {{ seat }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="booking-detail">
+                            <span class="bd-label">Total Price</span>
+                            <span class="bd-price">${{ "%.2f"|format(booking.total_price) }}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                {% if booking.status == 'confirmed' %}
+                <div class="booking-card-footer" id="footer-{{ booking.booking_id }}">
+                    <button class="btn btn-outline-danger btn-sm btn-cancel" 
+                            data-booking-id="{{ booking.booking_id }}">
+                        <i class="fa-solid fa-ban"></i> Cancel Booking
+                    </button>
+                </div>
+                {% endif %}
+            </div>
+            {% else %}
+            <div class="no-data">
+                <i class="fa-solid fa-ticket-simple"></i>
+                <p>No bookings found for this email address.</p>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cancelButtons = document.querySelectorAll('.btn-cancel');
+        
+        cancelButtons.forEach(btn => {
+            btn.addEventListener('click', async function() {
+                const bookingId = this.getAttribute('data-booking-id');
+                
+                if (!confirm(`Are you sure you want to cancel booking ${bookingId}?`)) {
+                    return;
+                }
+                
+                // Disable button and show spinner
+                this.disabled = true;
+                this.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Cancelling...';
+                
+                try {
+                    const response = await fetch('/api/cancel-booking', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ booking_id: bookingId })
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        // Update status badge
+                        const badge = document.getElementById(`status-badge-${bookingId}`);
+                        badge.className = 'booking-status badge badge-danger';
+                        badge.textContent = 'cancelled';
+                        
+                        // Remove footer/cancel button
+                        const footer = document.getElementById(`footer-${bookingId}`);
+                        if (footer) {
+                            footer.remove();
+                        }
+                        
+                        alert('Booking successfully cancelled!');
+                    } else {
+                        alert(result.message || 'Failed to cancel booking. Please try again.');
+                        this.disabled = false;
+                        this.innerHTML = '<i class="fa-solid fa-ban"></i> Cancel Booking';
+                    }
+                } catch (error) {
+                    console.error('Error cancelling:', error);
+                    alert('Communication error. Please try again.');
+                    this.disabled = false;
+                    this.innerHTML = '<i class="fa-solid fa-ban"></i> Cancel Booking';
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

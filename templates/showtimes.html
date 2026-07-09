@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Showtimes{% endblock %}
+
+{% block content %}
+<div class="container page-content">
+    <div class="page-header">
+        <h1 class="page-title">Movie Showtimes</h1>
+        <p class="page-subtitle">Find a screening that fits your schedule.</p>
+    </div>
+
+    <div class="card-container">
+        <div class="table-responsive">
+            <table class="showtimes-table">
+                <thead>
+                    <tr>
+                        <th>Movie</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for st in showtimes %}
+                    <tr>
+                        <td class="td-movie-title">
+                            <i class="fa-solid fa-clapperboard text-primary"></i>
+                            <span>{{ st.movie_title }}</span>
+                        </td>
+                        <td>
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>{{ st.date }}</span>
+                        </td>
+                        <td>
+                            <i class="fa-regular fa-clock"></i>
+                            <span class="badge badge-info">{{ st.start_time }}</span>
+                        </td>
+                        <td class="td-price">${{ "%.2f"|format(st.price) }}</td>
+                        <td>
+                            <a href="{{ url_for('booking_start') }}" class="btn btn-primary btn-sm btn-glow">
+                                <i class="fa-solid fa-plus"></i> Select
+                            </a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="5" class="text-center py-5 no-data">
+                            <i class="fa-solid fa-face-frown mb-3 d-block fs-1"></i>
+                            No showtimes are currently scheduled.
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

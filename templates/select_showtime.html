@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Select Showtime{% endblock %}
+
+{% block content %}
+<div class="container page-content">
+    <div class="page-header">
+        <h1 class="page-title">Select a Showtime</h1>
+        <p class="page-subtitle">Welcome back, <strong>{{ customer.name }}</strong>. Please pick the showtime you'd like to book.</p>
+    </div>
+
+    <div class="showtimes-grid">
+        {% for st in showtimes %}
+        <div class="showtime-card">
+            <div class="showtime-card-body">
+                <div class="showtime-movie-header">
+                    <i class="fa-solid fa-clapperboard showtime-icon"></i>
+                    <div>
+                        <h3 class="showtime-movie-title">{{ st.movie_title }}</h3>
+                        <span class="showtime-movie-meta"><i class="fa-regular fa-clock"></i> {{ st.movie_duration }} mins</span>
+                    </div>
+                </div>
+                
+                <div class="showtime-details">
+                    <div class="showtime-detail-item">
+                        <i class="fa-solid fa-display"></i>
+                        <span>Screen: <strong>{{ st.screen_name }}</strong></span>
+                    </div>
+                    <div class="showtime-detail-item">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <span>Date: <strong>{{ st.date }}</strong></span>
+                    </div>
+                    <div class="showtime-detail-item">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>Time: <strong class="badge badge-info">{{ st.start_time }}</strong></span>
+                    </div>
+                </div>
+
+                <div class="showtime-footer">
+                    <div class="showtime-price">
+                        <span class="price-label">Ticket Price</span>
+                        <span class="price-val">${{ "%.2f"|format(st.price) }}</span>
+                    </div>
+                    <a href="{{ url_for('select_seats', showtime_id=st.id) }}" class="btn btn-primary btn-glow">
+                        Select Seats <i class="fa-solid fa-chair ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="no-data w-100">
+            <i class="fa-solid fa-face-frown"></i>
+            <p>No showtimes scheduled. Please check back later!</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

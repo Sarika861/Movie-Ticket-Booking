@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Now Showing{% endblock %}
+
+{% block content %}
+<div class="container page-content">
+    <div class="page-header">
+        <h1 class="page-title">Now Showing</h1>
+        <p class="page-subtitle">Browse currently playing movies and reserve your tickets.</p>
+    </div>
+
+    <div class="movies-grid">
+        {% for movie in movies %}
+        <div class="movie-card">
+            <div class="movie-poster-wrapper">
+                <img src="{{ movie.poster_url }}" alt="{{ movie.title }}" class="movie-poster">
+                <div class="movie-rating">
+                    <i class="fa-solid fa-star text-warning"></i> {{ movie.rating }}
+                </div>
+            </div>
+            <div class="movie-details">
+                <div class="movie-genre-badge">{{ movie.genre }}</div>
+                <h3 class="movie-title">{{ movie.title }}</h3>
+                <p class="movie-description">{{ movie.description }}</p>
+                <div class="movie-meta">
+                    <span class="movie-duration">
+                        <i class="fa-regular fa-clock"></i> {{ movie.duration }} mins
+                    </span>
+                </div>
+                <div class="movie-actions">
+                    <a href="{{ url_for('booking_start') }}" class="btn btn-primary w-100 btn-glow">
+                        <i class="fa-solid fa-ticket"></i> Book Tickets
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="no-data">
+            <i class="fa-solid fa-face-frown"></i>
+            <p>No movies are currently scheduled. Please check back later!</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

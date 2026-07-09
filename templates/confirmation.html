@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %}Booking Confirmed{% endblock %}
+
+{% block content %}
+<div class="container page-content flex-center">
+    <div class="confirmation-container">
+        <div class="success-banner">
+            <div class="success-icon-wrapper">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2>Booking Confirmed!</h2>
+            <p>Thank you for choosing CineMax. Your tickets have been reserved.</p>
+        </div>
+        
+        <!-- Ticket Layout -->
+        <div class="ticket-card">
+            <div class="ticket-main">
+                <div class="ticket-header">
+                    <span class="ticket-brand">CineMax Theater</span>
+                    <span class="ticket-id-badge">ID: {{ booking.booking_id }}</span>
+                </div>
+                
+                <h3 class="ticket-movie-title">{{ booking.movie_title }}</h3>
+                
+                <div class="ticket-details-grid">
+                    <div class="ticket-detail">
+                        <span class="td-label">Name</span>
+                        <span class="td-value">{{ booking.customer_name }}</span>
+                    </div>
+                    <div class="ticket-detail">
+                        <span class="td-label">Email</span>
+                        <span class="td-value">{{ booking.customer_email }}</span>
+                    </div>
+                    <div class="ticket-detail">
+                        <span class="td-label">Booking Date</span>
+                        <span class="td-value">{{ booking.booking_date }}</span>
+                    </div>
+                    <div class="ticket-detail">
+                        <span class="td-label">Status</span>
+                        <span class="td-value text-success uppercase"><i class="fa-solid fa-circle"></i> {{ booking.status }}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ticket-divider">
+                <div class="notch left"></div>
+                <div class="dashed-line"></div>
+                <div class="notch right"></div>
+            </div>
+            
+            <div class="ticket-stub">
+                <div class="stub-details">
+                    <div class="stub-row">
+                        <span class="td-label">Seats Selected</span>
+                        <div class="stub-seats">
+                            {% for seat in booking.seats %}
+                            <span class="seat-badge mini"><i class="fa-solid fa-chair"></i> {{ seat }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="stub-row mt-3">
+                        <span class="td-label">Total Amount</span>
+                        <span class="stub-price text-glow">${{ "%.2f"|format(booking.total_price) }}</span>
+                    </div>
+                </div>
+                
+                <!-- Mock Barcode -->
+                <div class="barcode-wrapper">
+                    <div class="barcode"></div>
+                    <span class="barcode-number">{{ booking.booking_id }}</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="confirmation-actions mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary mr-2">
+                <i class="fa-solid fa-house"></i> Back to Home
+            </a>
+            <a href="{{ url_for('my_bookings') }}" class="btn btn-primary btn-glow">
+                <i class="fa-solid fa-ticket-simple"></i> View My Bookings
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{
+  "movies": [
+    {
+      "id": "M1",
+      "title": "The Last Guardian",
+      "description": "An action-packed thriller",
+      "genre": "Action",
+      "duration": 148,
+      "rating": 8.5,
+      "poster_url": "/static/posters/guardian.jpg"
+    },
+    {
+      "id": "M2",
+      "title": "Quantum Dreams",
+      "description": "A mind-bending sci-fi adventure",
+      "genre": "Sci-Fi",
+      "duration": 156,
+      "rating": 8.2,
+      "poster_url": "/static/posters/quantum.jpg"
+    },
+    {
+      "id": "M3",
+      "title": "Love in Paris",
+      "description": "A romantic journey through the city of lights",
+      "genre": "Romance",
+      "duration": 120,
+      "rating": 7.8,
+      "poster_url": "/static/posters/paris.jpg"
+    }
+  ]
+}

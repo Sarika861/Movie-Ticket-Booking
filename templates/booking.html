@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Start Booking{% endblock %}
+
+{% block content %}
+<div class="container page-content flex-center">
+    <div class="booking-flow-card">
+        <div class="flow-header">
+            <h2>Step 1: Your Details</h2>
+            <p>Please enter your contact information to start booking tickets.</p>
+        </div>
+        
+        <form action="{{ url_for('booking_start') }}" method="POST" class="booking-form">
+            <div class="form-group">
+                <label for="name"><i class="fa-solid fa-user"></i> Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+                <label for="email"><i class="fa-solid fa-envelope"></i> Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone"><i class="fa-solid fa-phone"></i> Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block btn-lg btn-glow mt-4">
+                Continue to Showtime <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

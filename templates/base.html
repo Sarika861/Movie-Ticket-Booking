@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - CineMax Theater</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-container">
+            <a href="{{ url_for('index') }}" class="brand">
+                <i class="fa-solid fa-film accent-icon"></i>
+                <span class="brand-text">Cine<span>Max</span></span>
+            </a>
+            <nav class="nav-menu">
+                <a href="{{ url_for('index') }}" class="nav-link {% if request.path == '/' %}active{% endif %}">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <a href="{{ url_for('movies_list') }}" class="nav-link {% if request.path == '/movies' %}active{% endif %}">
+                    <i class="fa-solid fa-clapperboard"></i> Movies
+                </a>
+                <a href="{{ url_for('showtimes_list') }}" class="nav-link {% if request.path == '/showtimes' %}active{% endif %}">
+                    <i class="fa-solid fa-calendar-days"></i> Showtimes
+                </a>
+                <a href="{{ url_for('my_bookings') }}" class="nav-link {% if request.path == '/my-bookings' %}active{% endif %}">
+                    <i class="fa-solid fa-ticket-simple"></i> My Bookings
+                </a>
+            </nav>
+            <div class="header-actions">
+                <a href="{{ url_for('booking_start') }}" class="btn btn-primary btn-glow">
+                    <i class="fa-solid fa-plus"></i> Book Tickets
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="footer-brand">
+                    <i class="fa-solid fa-film accent-icon"></i> CineMax
+                </div>
+                <p>Experience cinema in the ultimate luxury and comfort. State-of-the-art projection and sound system.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('movies_list') }}">Now Showing</a>
+                <a href="{{ url_for('showtimes_list') }}">Showtimes</a>
+                <a href="{{ url_for('my_bookings') }}">Manage Bookings</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-location-dot"></i> 123 Cinema Boulevard, Suite 100</p>
+                <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fa-solid fa-envelope"></i> support@cinemax.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CineMax Theater. All rights reserved.</p>
+        </div>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
