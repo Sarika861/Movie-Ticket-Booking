@@ -81,7 +81,7 @@ def init_data():
                     "genre": "Action",
                     "duration": 148,
                     "rating": 8.5,
-                    "poster_url": "/static/posters/guardian.jpg"
+                    "poster_url": "/static/images/last.jfif"
                 },
                 {
                     "id": "M2",
@@ -90,7 +90,7 @@ def init_data():
                     "genre": "Sci-Fi",
                     "duration": 156,
                     "rating": 8.2,
-                    "poster_url": "/static/posters/quantum.jpg"
+                    "poster_url": "/static/images/quantam.jpg"
                 },
                 {
                     "id": "M3",
@@ -99,7 +99,7 @@ def init_data():
                     "genre": "Romance",
                     "duration": 120,
                     "rating": 7.8,
-                    "poster_url": "/static/posters/paris.jpg"
+                    "poster_url": "/static/images/love.jfif"
                 }
             ]
         }

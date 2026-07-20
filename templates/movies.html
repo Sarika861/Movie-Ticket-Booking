@@ -13,7 +13,15 @@
         {% for movie in movies %}
         <div class="movie-card">
             <div class="movie-poster-wrapper">
+                {% if movie.id == 'M1' %}
+                <img src="{{ url_for('static', filename='images/last.jfif') }}" alt="{{ movie.title }}" class="movie-poster">
+                {% elif movie.id == 'M2' %}
+                <img src="{{ url_for('static', filename='images/quantam.jpg') }}" alt="{{ movie.title }}" class="movie-poster">
+                {% elif movie.id == 'M3' %}
+                <img src="{{ url_for('static', filename='images/love.jfif') }}" alt="{{ movie.title }}" class="movie-poster">
+                {% else %}
                 <img src="{{ movie.poster_url }}" alt="{{ movie.title }}" class="movie-poster">
+                {% endif %}
                 <div class="movie-rating">
                     <i class="fa-solid fa-star text-warning"></i> {{ movie.rating }}
                 </div>

@@ -330,3 +330,118 @@ jinja2.exceptions.TemplateNotFound: index.html
 2026-07-09 11:23:22,218 - werkzeug - INFO - 127.0.0.1 - - [09/Jul/2026 11:23:22] "[36mGET /static/posters/paris.jpg HTTP/1.1[0m" 304 -
 2026-07-09 11:23:26,230 - werkzeug - INFO - 127.0.0.1 - - [09/Jul/2026 11:23:26] "GET /booking HTTP/1.1" 200 -
 2026-07-09 11:23:26,756 - werkzeug - INFO - 127.0.0.1 - - [09/Jul/2026 11:23:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-20 22:11:54,472 - __main__ - INFO - Application initialized successfully
+2026-07-20 22:11:54,476 - __main__ - INFO - ======================================================================
+2026-07-20 22:11:54,476 - __main__ - INFO - Starting CineMax Theater Booking System
+2026-07-20 22:11:54,476 - __main__ - INFO - ======================================================================
+2026-07-20 22:11:54,476 - __main__ - INFO - Base Directory: C:\Users\Admin\Downloads\Movie-ticket-booking--main\Movie-ticket-booking--main
+2026-07-20 22:11:54,476 - __main__ - INFO - Templates: True
+2026-07-20 22:11:54,477 - __main__ - INFO - Static: True
+2026-07-20 22:11:54,477 - __main__ - INFO - Data Storage: JSON Files
+2026-07-20 22:11:54,477 - __main__ - INFO - Server: http://0.0.0.0:5000
+2026-07-20 22:11:54,477 - __main__ - INFO - Debug: False
+2026-07-20 22:11:54,477 - __main__ - INFO - ======================================================================
+2026-07-20 22:11:54,477 - __main__ - INFO - Press Ctrl+C to stop the server
+2026-07-20 22:11:54,477 - __main__ - INFO - ======================================================================
+2026-07-20 22:11:54,534 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.194:5000
+2026-07-20 22:11:54,535 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-07-20 22:11:54,583 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2026-07-20 22:11:54,868 - __main__ - INFO - Application initialized successfully
+2026-07-20 22:11:54,871 - __main__ - INFO - ======================================================================
+2026-07-20 22:11:54,872 - __main__ - INFO - Starting CineMax Theater Booking System
+2026-07-20 22:11:54,872 - __main__ - INFO - ======================================================================
+2026-07-20 22:11:54,872 - __main__ - INFO - Base Directory: C:\Users\Admin\Downloads\Movie-ticket-booking--main\Movie-ticket-booking--main
+2026-07-20 22:11:54,872 - __main__ - INFO - Templates: True
+2026-07-20 22:11:54,872 - __main__ - INFO - Static: True
+2026-07-20 22:11:54,872 - __main__ - INFO - Data Storage: JSON Files
+2026-07-20 22:11:54,872 - __main__ - INFO - Server: http://0.0.0.0:5000
+2026-07-20 22:11:54,872 - __main__ - INFO - Debug: True
+2026-07-20 22:11:54,873 - __main__ - INFO - ======================================================================
+2026-07-20 22:11:54,873 - __main__ - INFO - Press Ctrl+C to stop the server
+2026-07-20 22:11:54,873 - __main__ - INFO - ======================================================================
+2026-07-20 22:11:54,913 - werkzeug - WARNING -  * Debugger is active!
+2026-07-20 22:11:54,932 - werkzeug - INFO -  * Debugger PIN: 403-842-113
+2026-07-20 22:12:05,588 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:12:05] "GET / HTTP/1.1" 200 -
+2026-07-20 22:12:06,081 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:12:06] "GET /static/style.css HTTP/1.1" 200 -
+2026-07-20 22:12:06,958 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:12:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-20 22:12:10,511 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:12:10] "GET /movies HTTP/1.1" 200 -
+2026-07-20 22:12:10,568 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:12:10] "GET /movies HTTP/1.1" 200 -
+2026-07-20 22:12:10,643 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:12:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-20 22:12:10,645 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:12:10] "GET /static/posters/guardian.jpg HTTP/1.1" 200 -
+2026-07-20 22:12:10,646 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:12:10] "GET /static/posters/quantum.jpg HTTP/1.1" 200 -
+2026-07-20 22:12:10,681 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:12:10] "GET /static/posters/paris.jpg HTTP/1.1" 200 -
+2026-07-20 22:36:07,081 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Admin\\Downloads\\Movie-ticket-booking--main\\Movie-ticket-booking--main\\app.py', reloading
+2026-07-20 22:36:07,116 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Admin\\Downloads\\Movie-ticket-booking--main\\Movie-ticket-booking--main\\app.py', reloading
+2026-07-20 22:36:07,782 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2026-07-20 22:36:08,543 - __main__ - INFO - Application initialized successfully
+2026-07-20 22:36:08,552 - __main__ - INFO - ======================================================================
+2026-07-20 22:36:08,553 - __main__ - INFO - Starting CineMax Theater Booking System
+2026-07-20 22:36:08,555 - __main__ - INFO - ======================================================================
+2026-07-20 22:36:08,560 - __main__ - INFO - Base Directory: C:\Users\Admin\Downloads\Movie-ticket-booking--main\Movie-ticket-booking--main
+2026-07-20 22:36:08,561 - __main__ - INFO - Templates: True
+2026-07-20 22:36:08,562 - __main__ - INFO - Static: True
+2026-07-20 22:36:08,562 - __main__ - INFO - Data Storage: JSON Files
+2026-07-20 22:36:08,563 - __main__ - INFO - Server: http://0.0.0.0:5000
+2026-07-20 22:36:08,563 - __main__ - INFO - Debug: True
+2026-07-20 22:36:08,563 - __main__ - INFO - ======================================================================
+2026-07-20 22:36:08,563 - __main__ - INFO - Press Ctrl+C to stop the server
+2026-07-20 22:36:08,563 - __main__ - INFO - ======================================================================
+2026-07-20 22:36:08,619 - werkzeug - WARNING -  * Debugger is active!
+2026-07-20 22:36:08,632 - werkzeug - INFO -  * Debugger PIN: 403-842-113
+2026-07-20 22:37:38,759 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:37:38] "GET /movies HTTP/1.1" 200 -
+2026-07-20 22:37:39,070 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:37:39] "GET /static/images/last.jfif HTTP/1.1" 200 -
+2026-07-20 22:37:39,072 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:37:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-20 22:37:39,075 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:37:39] "GET /static/images/quantam.jpg HTTP/1.1" 200 -
+2026-07-20 22:37:39,087 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:37:39] "GET /static/images/love.jfif HTTP/1.1" 200 -
+2026-07-20 22:37:59,110 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:37:59] "GET /showtimes HTTP/1.1" 200 -
+2026-07-20 22:37:59,127 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:37:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-20 22:38:05,170 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:38:05] "GET /my-bookings HTTP/1.1" 200 -
+2026-07-20 22:38:05,186 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:38:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-20 22:38:07,766 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:38:07] "GET / HTTP/1.1" 200 -
+2026-07-20 22:38:07,783 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:38:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-20 22:38:09,686 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:38:09] "GET /my-bookings HTTP/1.1" 200 -
+2026-07-20 22:38:09,720 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:38:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-20 22:38:22,924 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:38:22] "POST /my-bookings HTTP/1.1" 200 -
+2026-07-20 22:38:22,953 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:38:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-20 22:38:28,816 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:38:28] "POST /my-bookings HTTP/1.1" 200 -
+2026-07-20 22:38:28,840 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:38:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-20 22:39:42,312 - __main__ - INFO - Application initialized successfully
+2026-07-20 22:39:42,317 - __main__ - INFO - ======================================================================
+2026-07-20 22:39:42,317 - __main__ - INFO - Starting CineMax Theater Booking System
+2026-07-20 22:39:42,318 - __main__ - INFO - ======================================================================
+2026-07-20 22:39:42,318 - __main__ - INFO - Base Directory: C:\Users\Admin\Downloads\Movie-ticket-booking--main\Movie-ticket-booking--main
+2026-07-20 22:39:42,318 - __main__ - INFO - Templates: True
+2026-07-20 22:39:42,319 - __main__ - INFO - Static: True
+2026-07-20 22:39:42,319 - __main__ - INFO - Data Storage: JSON Files
+2026-07-20 22:39:42,319 - __main__ - INFO - Server: http://0.0.0.0:5000
+2026-07-20 22:39:42,319 - __main__ - INFO - Debug: False
+2026-07-20 22:39:42,319 - __main__ - INFO - ======================================================================
+2026-07-20 22:39:42,320 - __main__ - INFO - Press Ctrl+C to stop the server
+2026-07-20 22:39:42,320 - __main__ - INFO - ======================================================================
+2026-07-20 22:39:42,436 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.194:5000
+2026-07-20 22:39:42,437 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-07-20 22:39:42,495 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2026-07-20 22:39:42,940 - __main__ - INFO - Application initialized successfully
+2026-07-20 22:39:42,947 - __main__ - INFO - ======================================================================
+2026-07-20 22:39:42,947 - __main__ - INFO - Starting CineMax Theater Booking System
+2026-07-20 22:39:42,947 - __main__ - INFO - ======================================================================
+2026-07-20 22:39:42,947 - __main__ - INFO - Base Directory: C:\Users\Admin\Downloads\Movie-ticket-booking--main\Movie-ticket-booking--main
+2026-07-20 22:39:42,951 - __main__ - INFO - Templates: True
+2026-07-20 22:39:42,956 - __main__ - INFO - Static: True
+2026-07-20 22:39:42,972 - __main__ - INFO - Data Storage: JSON Files
+2026-07-20 22:39:42,974 - __main__ - INFO - Server: http://0.0.0.0:5000
+2026-07-20 22:39:42,980 - __main__ - INFO - Debug: True
+2026-07-20 22:39:42,981 - __main__ - INFO - ======================================================================
+2026-07-20 22:39:42,982 - __main__ - INFO - Press Ctrl+C to stop the server
+2026-07-20 22:39:42,983 - __main__ - INFO - ======================================================================
+2026-07-20 22:39:43,035 - werkzeug - WARNING -  * Debugger is active!
+2026-07-20 22:39:43,052 - werkzeug - INFO -  * Debugger PIN: 403-842-113
+2026-07-20 22:39:56,731 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:39:56] "GET / HTTP/1.1" 200 -
+2026-07-20 22:39:57,061 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:39:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-20 22:39:57,319 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2026 22:39:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
